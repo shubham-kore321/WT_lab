@@ -1,0 +1,25 @@
+.heading {
+    margin-top: 20px;
+}
+
+.heading a {
+    display: inline-block;   /* makes link behave like button */
+    padding: 10px 20px;      /* size of button */
+    margin: 10px;            /* space between buttons */
+    background-color: #398dae;  /* button color */
+    color: white;            /* text color */
+    text-decoration: none;   /* remove underline */
+    border-radius: 8px;      /* rounded corners */
+    font-weight: bold;
+}
+
+.heading a:hover {
+    background-color: #45a049;  /* hover effect */
+}
+
+
+#top {
+    background-image: linear-gradient(to right,rgb(41, 41, 41),rgb(255, 255, 255));
+     text-align: center;
+}
+
