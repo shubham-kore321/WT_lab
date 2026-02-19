@@ -3,18 +3,18 @@
 }
 
 .heading a {
-    display: inline-block;   /* makes link behave like button */
-    padding: 10px 20px;      /* size of button */
-    margin: 10px;            /* space between buttons */
-    background-color: #398dae;  /* button color */
-    color: white;            /* text color */
-    text-decoration: none;   /* remove underline */
-    border-radius: 8px;      /* rounded corners */
+    display: inline-block;   
+    padding: 10px 20px;      
+    margin: 10px;          
+    background-color: #398dae;  
+    color: white;           
+    text-decoration: none;  
+    border-radius: 8px;      
     font-weight: bold;
 }
 
 .heading a:hover {
-    background-color: #45a049;  /* hover effect */
+    background-color: #45a049; 
 }
 
 
