@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple CSS Calculator</title>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #000000, #000000);
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            color: rgb(255, 255, 255);
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .calculator {
+            background: rgb(0, 0, 0);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgb(255, 0, 0);
+            text-align: center;
+            
+        }
+
+        input {
+            width: 200px;
+            height: 40px;
+            margin: 5px;
+            font-size: 18px;
+            text-align: center;
+            border-radius: 20px;
+
+        }
+
+        button {
+            width: 45px;
+            height: 40px;
+            font-size: 18px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 10px;
+             box-shadow: 2px 2px 5px rgb(255, 0, 0);
+            color: rgb(0, 0, 0);
+            
+        }
+        button:active {
+    box-shadow: 0 2px 3px rgba(211, 202, 202, 0.3);
+    transform: translateY(2px);
+}
+    </style>
+</head>
+
+<body>
+
+<div class="calculator">
+    <h3>Calculator</h3>
+
+    <input type="text" id="display" readonly><br>
+
+    <button onclick="press('1')">1</button>
+    <button onclick="press('2')">2</button>
+    <button onclick="press('3')">3</button>
+    <button onclick="press('+')">+</button><br>
+
+    <button onclick="press('4')">4</button>
+    <button onclick="press('5')">5</button>
+    <button onclick="press('6')">6</button>
+    <button onclick="press('-')">-</button><br>
+
+    <button onclick="press('7')">7</button>
+    <button onclick="press('8')">8</button>
+    <button onclick="press('9')">9</button>
+    <button onclick="press('*')">*</button><br>
+
+    <button onclick="press('0')">0</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="clearDisplay()">C</button>
+    <button onclick="press('/')">/</button>
+</div>
+
+<script>
+
+let display = document.getElementById("display");
+
+function press(value) {
+    display.value += value;
+}
+
+function calculate() {
+    display.value = eval(display.value);
+}
+
+function clearDisplay() {
+    display.value = "";
+}
+
+</script>
+</body>
+</html>
