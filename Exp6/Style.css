@@ -1,0 +1,99 @@
+body {
+    background-image: url(education-background.webp);
+
+    background-color: rgb(255, 255, 255);
+    font-family: Arial;
+
+}
+
+
+.container {
+
+    width: 400px;
+    margin: auto;
+    margin-top: 40px;
+    background: rgb(216, 216, 216) transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(0, 21, 255);
+    opacity: 0.9;
+
+}
+
+
+h1 {
+
+    text-align: center;
+    color: darkblue;
+
+}
+
+
+label {
+
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+
+}
+
+
+input,
+select,
+textarea {
+
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+
+}
+
+
+.radio input {
+
+    width: auto;
+
+}
+
+
+.checkbox input {
+
+    width: auto;
+
+}
+
+
+button {
+
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background: rgba(39, 39, 217, 0.5);
+
+}
+
+
+button:hover {
+
+    background: darkblue;
+
+}
+
+
+#output {
+
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    background: #f5f5f5;
+
+}
