@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Form</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body >
+<div class="container">
+
+    <h1>Registration Form</h1>
+
+    <form id="myForm">
+
+        <label>Name</label>
+        <input type="text" id="name">
+
+        <label>Email</label>
+        <input type="email" id="email">
+
+        <label>Password</label>
+        <input type="password" id="pass">
+
+        <label>Date of Birth</label>
+        <input type="date" id="dob">
+
+        <label>Gender</label>
+
+        <div class="radio">
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+        </div>
+
+        <label>Hobbies</label>
+
+        <div class="checkbox">
+            <input type="checkbox" value="Reading"> Reading
+            <input type="checkbox" value="Gaming"> Gaming
+            <input type="checkbox" value="Sports"> Sports
+            <input type="checkbox" value="coding"> coding
+
+        </div>
+
+        <label>Country</label>
+
+        <select id="country">
+            <option>India</option>
+            <option>USA</option>
+            <option>UK</option>
+            <option>Nepal</option>
+        </select>
+
+        <label>Address</label>
+
+        <textarea id="address"></textarea>
+
+        <br>
+
+        <button type="button" onclick="show()">Submit</button>
+
+    </form>
+
+    <div id="output">
+
+        <h2>Form Output</h2>
+
+    </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+<button type="button" onclick="downloadData()">Download</button>
+
+</html>

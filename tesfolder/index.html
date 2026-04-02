@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PHP Array Form</title>
+</head>
+<body>
+
+<h2>Enter Student Data</h2>
+
+<form method="post">
+    Name: <input type="text" name="name"><br><br>
+    Marks (3 subjects):<br>
+    Subject 1: <input type="number" name="marks[]"><br>
+    Subject 2: <input type="number" name="marks[]"><br>
+    Subject 3: <input type="number" name="marks[]"><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<hr>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $name = $_POST['name'];
+    $marks = $_POST['marks']; // 1D array
+
+    echo "<h3>1D Array (Marks):</h3>";
+    foreach ($marks as $m) {
+        echo $m . " ";
+    }
+
+    // 2D Array (Student + Marks)
+    $student = [
+        "name" => $name,
+        "marks" => $marks
+    ];
+
+    echo "<h3>2D Array (Student Data):</h3>";
+    echo "Name: " . $student['name'] . "<br>";
+    echo "Marks: ";
+    foreach ($student['marks'] as $m) {
+        echo $m . " ";
+    }
+
+    // 3D Array (Multiple Students)
+    $students = [
+        [
+            "name" => $name,
+            "marks" => $marks
+        ],
+        [
+            "name" => "Demo Student",
+            "marks" => [80, 85, 90]
+        ]
+    ];
+
+    echo "<h3>3D Array (Multiple Students):</h3>";
+
+    foreach ($students as $s) {
+        echo "<br>Name: " . $s['name'] . "<br>";
+        echo "Marks: ";
+        foreach ($s['marks'] as $m) {
+            echo $m . " ";
+        }
+        echo "<br>";
+    }
+}
+?>
+
+</body>
+</html>
