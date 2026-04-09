@@ -8,18 +8,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $thought = htmlspecialchars($_POST['thought']);
 
     $data = $name . " | " . $email . " | " . $thought . "\n";
-    file_put_contents($file, $data, FILE_APPEND);
-
-    $success = "Data submitted successfully!";
+    if (file_put_contents($file, $data, FILE_APPEND) === false) {
+        $error = "Failed to save data. Please try again.";
+    } else {
+        $success = "Data submitted successfully!";
+    }
 }
 
 if (isset($_POST['clear'])) {
-    file_put_contents($file, "");
+    if (file_put_contents($file, "") === false) {
+        $error = "Failed to clear data.";
+    } else {
+        $success = "Data cleared successfully!";
+    }
 }
 
 $records = [];
 if (file_exists($file)) {
-    $records = file($file);
+    $records = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 }
 ?>
 
@@ -100,6 +106,11 @@ button:hover {
     color: green;
     font-size: 14px;
 }
+
+.error {
+    color: red;
+    font-size: 14px;
+}
 </style>
 
 </head>
@@ -112,6 +123,7 @@ button:hover {
         <h2>Feedback Form</h2>
 
         <?php if (isset($success)) echo "<p class='success'>$success</p>"; ?>
+        <?php if (isset($error)) echo "<p class='error'>$error</p>"; ?>
 
         <form method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
@@ -140,6 +152,8 @@ button:hover {
         <form method="POST">
             <button class="clear-btn" name="clear">Clear All</button>
         </form>
+
+        <?php if (isset($error)) echo "<p class='error'>$error</p>"; ?>
     </div>
 
 </div>
